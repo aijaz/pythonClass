@@ -18,16 +18,20 @@ def add_to_history_and_print(the_word, the_result, character_state):
         print("")
 
     print("")
-    for c in "ABCDEFGHIJKLMNOPQRSTUVWXYZ":
-        ansi_bg = 245
-        if character_state.get(c) == "🟩":
-            ansi_bg = 2
-        elif character_state.get(c) == '🟨':
-            ansi_bg = 3
-        elif character_state.get(c) == '🟥':
-            ansi_bg = 1
-        print(colorize(c, ansi=234, ansi_bg=ansi_bg), end=" ")
-    print("")
+    for row in ["QWERTYUIOP", " ASDFGHJKL", "  ZXCVBNM"]:
+        for c in row:
+            if c == " ":
+                print(" ", end="")
+                continue
+            ansi_bg = 245
+            if character_state.get(c) == "🟩":
+                ansi_bg = 2
+            elif character_state.get(c) == '🟨':
+                ansi_bg = 3
+            elif character_state.get(c) == '🟥':
+                ansi_bg = 1
+            print(colorize(c, ansi=234, ansi_bg=ansi_bg), end=" ")
+        print("")
 
 secret_word = game.get_random_word()
 number_of_guesses = 0
