@@ -23,8 +23,10 @@ def get_random_word():
 # history_of_guesses = []
 #
 
-def get_result(secret_word, guess_word):
+def get_result(secret_word, guess_word, character_state):
     if secret_word == guess_word:
+        for c in secret_word:
+            character_state[c] = '🟩'
         return '🟩🟩🟩🟩🟩'
     result = [None, None, None, None, None]
 
@@ -41,6 +43,7 @@ def get_result(secret_word, guess_word):
         if guess_word[i] == secret_word[i]:
             result[i] = "🟩"
             character = guess_word[i]
+            character_state[character] = "🟩"
             number_available[character] -= 1
 
     for i in range(5):
@@ -53,8 +56,12 @@ def get_result(secret_word, guess_word):
         character = guess_word[i]
         if character in secret_word and number_available[character] > 0:
             result[i] = '🟨'
+            if character_state.get(character) != '🟩':
+                character_state[character] = '🟨'
             number_available[character] -= 1
         else:
+            if character_state.get(character) is None:
+                character_state[character] = '🟥'
             result[i] = '🟥'
 
     return "".join(result)
