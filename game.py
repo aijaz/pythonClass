@@ -7,18 +7,12 @@ def get_random_word():
     global guessable_words
     with open("allwords.txt") as all_words_file:
         all_words = all_words_file.read().strip().upper()
-        all_words_list = all_words.splitlines()
-
-    with open("badwords.txt") as bad_words_file:
-        bad_words = bad_words_file.read().strip().upper()
-        bad_words_list = bad_words.splitlines()
+        guessable_words = all_words.splitlines()
 
     with open("commonwords.txt") as common_words_file:
         common_words = common_words_file.read().strip().upper()
-        common_words_list = common_words.splitlines()
+        secret_words = common_words.splitlines()
 
-    guessable_words = [word for word in all_words_list if word not in bad_words_list]
-    secret_words = [word for word in common_words_list if word not in bad_words_list]
     word = choice(secret_words)
     return word
 
@@ -30,43 +24,38 @@ def get_random_word():
 #
 
 def get_result(secret_word, guess_word):
-    
-    result = []
+    if secret_word == guess_word:
+        return '🟩🟩🟩🟩🟩'
+    result = [None, None, None, None, None]
 
-    if len(secret_word) == 5 and len(guess_word) == 5:
-        for i, letter in enumerate(guess_word):
-            if secret_word[i] == letter:
-                result.append('🟩')
-            elif letter in secret_word:
-                result.append('🟨')
-            else:
-                result.append('🟥')
+    number_available = {}
+
+    # populate num_available
+    for character in secret_word:
+        if number_available.get(character) is None:
+            number_available[character] = 1
+        else:
+            number_available[character] += 1
+
+    for i in range(5):
+        if guess_word[i] == secret_word[i]:
+            result[i] = "🟩"
+            character = guess_word[i]
+            number_available[character] -= 1
+
+    for i in range(5):
+        if result[i] == "🟩":
+            # we've already marked this:
+            continue
+
+        # At this point this is either "🟨" or "🟥"
+        # We're only looking at characters that are no exact matches
+        character = guess_word[i]
+        if character in secret_word and number_available[character] > 0:
+            result[i] = '🟨'
+            number_available[character] -= 1
+        else:
+            result[i] = '🟥'
 
     return "".join(result)
 
-
-# def add_to_history_and_print(the_result):
-#     history_of_guesses.append(the_result)
-#     for r in history_of_guesses:
-#         print(r)
-#
-#
-# while True:
-#     guess = input("Enter a word: ").strip().upper()
-#     number_of_guesses = number_of_guesses + 1
-#     if guess == random_word:
-#         result = get_result(random_word, guess)
-#         add_to_history_and_print(result)
-#         print(f"That's correct! The word was {random_word}")
-#         break
-#
-#     print("That's wrong")
-#     if number_of_guesses < maximum_guesses:
-#         print("Try again.")
-#         result = get_result(random_word, guess)
-#         add_to_history_and_print(result)
-#     else:
-#         print(f"Sorry. You ran out of guesses. The word is {random_word}.")
-#         break
-#
-# print("Game Over")

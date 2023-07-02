@@ -214,7 +214,6 @@ class WordleWindow(arcade.Window):
             self.should_show_secret_word = True
 
 
-
 # Main code entry point
 if __name__ == "__main__":
     app = WordleWindow(arcade.color.BLACK)
