@@ -1,15 +1,26 @@
+from xtermcolor import colorize
+
 import game
 
 history_of_guesses = []
 
 def add_to_history_and_print(the_word, the_result):
     history_of_guesses.append((the_word, the_result))
-    for r in history_of_guesses:
-        for char in r[0]:
-            print(char, end=" ")
-        print("")
-        print(r[1])
+    # for r in history_of_guesses:
+    #     for char in r[0]:
+    #         print(char, end=" ")
+    #     print("")
+    #     print(r[1])
 
+    for r in history_of_guesses:
+        for i, char in enumerate(r[0]):
+            if r[1][i] == '🟩':
+                print(colorize(r[0][i], ansi=234, ansi_bg=2), end="")
+            elif r[1][i] == '🟨':
+                print(colorize(r[0][i], ansi=234, ansi_bg=3), end="")
+            else:
+                print(colorize(r[0][i], ansi=234, ansi_bg=1), end="")
+        print("")
 
 secret_word = game.get_random_word()
 number_of_guesses = 0
