@@ -61,7 +61,7 @@ print("gogo" + "air.com")
 
 # print is a function - that's another name for a command
 # It's an instruction to the computer 'do this'
-# Functions are often verbs: print, read, exit
+# Functions are often verbs: print, exit
 # Sometimes we need to give the computer more information
 # 'What, exactly, DO you want me to print?'
 # 'I want you to print the value "Gogo"'
@@ -73,8 +73,40 @@ print(6 * 2)
 # You can have more tha one argument to a function
 print("Gogo", "Business", "Aviation")
 
+# There is another kind of function, but first...
+# We GRAMMAR!
+# Timothy cooked dinner
+# Subject verb   object
 
+# "gogobiz".upper()
+# object    verb    (The implied subject here is the computer)
 
+"gogobiz".upper()
+
+# This is another way to invoke a function ('upper') on a single arg: "gogobiz"
+# This is called object notation
+# This function has a return value.
+
+# [Insert rant about 'upper']
+
+# One would think that 'upper("gogobiz")' would work as well
+upper("gogobiz")
+# One would be wrong
+
+# [Insert rant about the need for a .]
+# Sometimes you use object notation, and sometimes you don't
+len("Gogo")
+
+# VARIABLES
+
+radius = 2
+pi = 3.14
+area = pi * radius * radius
+print(area)
+
+# Reading values from the user
+name = input("What is your name? ")
+print("Good to meet you,", name)
 
 
 
