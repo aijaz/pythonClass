@@ -12,10 +12,10 @@
 # This is a string
 "Gogo"
 
-# Strings can use double or single quotes, or even...
+# Strings can use double or single quotes,
 'Gogo'
 
-# Triple quotes.
+# Or even triple quotes.
 """Gogo"""
 
 # Triple quotes are used for strings with multiple lines of text:
@@ -73,6 +73,16 @@ print(6 * 2)
 # You can have more tha one argument to a function
 print("Gogo", "Business", "Aviation")
 
+# These two examples are both one single parameter
+print("Gogo" + "Business" + "Aviation")
+print("Gogo" "Business" "Aviation")
+
+# What is the value of a print statement?
+print(print("Gogo" , "Business"))
+# (print has the value None - we don't know what this means right now)
+
+# The repl does not always print the value. Sometimes it just executes
+
 # There is another kind of function, but first...
 # We GRAMMAR!
 # Timothy cooked dinner
@@ -101,11 +111,23 @@ len("Gogo")
 
 radius = 2
 pi = 3.14
+print(radius)
+print(pi)
+
+# Earlier, 'print(Gogo)' didn't work. But we can make it work now
+Gogo = "Gogo"
+print(Gogo)
+
+# Coming back to our example,
 area = pi * radius * radius
 print(area)
 
 # Reading values from the user
 name = input("What is your name? ")
+
+# What is the value of input?
+print(input("What is your name? "))
+
 print("Good to meet you,", name)
 
 
