@@ -1,0 +1,138 @@
+# 345678901234567890123456789012345678901234567890123456789012345678901234567890
+# Anything after a '#' (including the '#') is a comment and is ignored
+
+# Expression: anything that has a 'value'
+
+# This is an integer
+1
+
+# This is a floating point number
+3.14
+
+# This is a string
+"Gogo"
+
+# Strings can use double or single quotes, or even...
+'Gogo'
+
+# Triple quotes.
+"""Gogo"""
+
+# Triple quotes are used for strings with multiple lines of text:
+"""This is a string
+that is
+three lines long"""
+
+# The \n represents the new lines (a.k.a. the newline character)
+
+# You can do this
+'This is a string\nthat is\nthree lines long'
+
+# But you can't do this:
+'This is a string
+
+# An operation is something you do to 1 or more expressions
+1 + 2
+
+# + is the operator, and 1 and 2 are the operands
+
+# Some operators even work with string expressions - like '+'
+"Gogo" + "Biz"
+
+# Some operators don't make any sense with string expressions: like '-'
+"Gogo" - "Biz"
+
+# Let's look back at 1 + 2
+1 + 2
+
+# What is this REPL doing?
+# Reading our input (1 + 2)
+# Evaluating our input (The value of 1 + 2 is 3)
+# Printing out the output
+# Looping back to the beginning
+
+# The REPL isn't how we normally use python, but it's a good way to learn
+
+# Turns out you can tell Python to print something:
+print(1)
+print(1 + 2)
+print("Gogo")
+print("gogo" + "air.com")
+
+# print is a function - that's another name for a command
+# It's an instruction to the computer 'do this'
+# Functions are often verbs: print, read, exit
+# Sometimes we need to give the computer more information
+# 'What, exactly, DO you want me to print?'
+# 'I want you to print the value "Gogo"'
+print("Gogo")
+print(1)
+print(6 * 2)
+
+# The stuff inside the parentheses is called the argument or the parameter
+# You can have more tha one argument to a function
+print("Gogo", "Business", "Aviation")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+"EOT"
+"EOT"
+"EOT"
+"EOT"
+"EOT"
+"EOT"
+"EOT"
+"EOT"
+"EOT"
+"EOT"
+"EOT"
+"EOT"
+"EOT"
+"EOT"
+"EOT"
+"EOT"
+"EOT"
+"EOT"
+"EOT"
+"EOT"
+"EOT"
