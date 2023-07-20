@@ -131,8 +131,101 @@ print(input("What is your name? "))
 print("Good to meet you,", name)
 
 
+## Week 2
+
+# RECAP
+
+# expressions, strings, functions, methods, variables
+# an expression is anything that can be printed
+1 + 2
+print("Gogo")
+print("gogobiz".upper())
+"gogobiz".upper()
+company = "gogo"
+print(company.title())
+
+# F strings
+
+print(f"I work at {company}")
+print(f"I work at {company.title()}")
+city = "Broomfield"
+print(f"I work at {company.title()} in {city}")
 
 
+# Examples
+your_name = input("What is your name? ")
+print(f"No one puts {your_name} in a corner.")
+print(f"{your_name} shark! Do do do do do do!")
+print(f"{your_name} shark! Do do do do do do!")
+print(f"{your_name} shark! Do do do do do do!")
+print(your_name.upper() + " SHARK!")
+
+# LISTS
+
+# What is a list?
+# Example
+my_list = [10, 20, 30]
+my_list[1]
+my_list[0]
+# index 0 refers to the first item in the list
+# It’s this way in most computer languages
+# Think of an index as the distance from the first item
+# The index of the last item is the length of the list - 1
+
+# You can also use negative indexes (indices)
+my_list[-1]
+
+# Changing, adding, and removing elements
+my_list.append(5)
+my_list.insert(0, 'a')
+my_list
+my_list.insert(2, 'b')
+my_list
+last = my_list.pop()
+last
+first = my_list.pop(0)
+first
+my_list
+my_list.insert(-1, 40)
+my_list
+my_list.insert(0, 5)
+my_list
+# insert inserts before the index
+my_list[0] = 3 # this changes the value of the first index
+second_last = my_list.pop(-2)
+second_last
+my_list
+my_list.append(1)
+my_list
+my_list.append(2)
+my_list
+my_list.remove('b')
+my_list
+my_list.append('b')
+my_list.insert(0, 'b')
+my_list
+my_list.remove('b')
+my_list
+
+
+# Get the length of a list with len
+len(my_list)
+
+# sort a list permanently using the method .sort()
+
+l2 = [8,6,7,5,3,0,9]
+l2
+l2.sort()
+l2
+
+# Get a sorted copy of the list by using sorted
+l2 = [8,6,7,5,3,0,9]
+l3 = sorted(l2)
+l3
+l2
+
+# reverse a list using reverse
+l2.reverse()
 
 
 
